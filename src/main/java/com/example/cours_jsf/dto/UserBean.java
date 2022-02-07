@@ -1,3 +1,4 @@
+
 package com.example.cours_jsf.dto;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -10,6 +11,7 @@ import java.io.Serializable;
 @SessionScoped
 public class UserBean implements Serializable {
     private String login = "tzoreol";
+    private String password;
 
     public String getLogin() {
         return login;
@@ -17,5 +19,13 @@ public class UserBean implements Serializable {
 
     public void setLogin(String login) {
         this.login = login;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
