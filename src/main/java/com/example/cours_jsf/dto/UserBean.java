@@ -15,6 +15,9 @@ import java.util.Date;
 public class UserBean implements Serializable {
     private String login = "tzoreol";
 
+    private String firstname = "Kevin";
+    private String lastname = "Pausé";
+
     @Size(min = 10, max = 32)
     private String password;
 
@@ -42,5 +45,21 @@ public class UserBean implements Serializable {
 
     public void setNow(Date now) {
         this.now = now;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 }
