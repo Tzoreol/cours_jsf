@@ -5,13 +5,20 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.util.Date;
 
 @Named("user")
 @SessionScoped
 public class UserBean implements Serializable {
     private String login = "tzoreol";
+
+    @Size(min = 10, max = 32)
     private String password;
+
+    private Date now = new Date();
 
     public String getLogin() {
         return login;
@@ -27,5 +34,13 @@ public class UserBean implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Date getNow() {
+        return now;
+    }
+
+    public void setNow(Date now) {
+        this.now = now;
     }
 }

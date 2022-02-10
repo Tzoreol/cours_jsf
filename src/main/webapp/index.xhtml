@@ -6,8 +6,10 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:form>
-    <h:outputLabel for="login" value="Login"/><h:inputText id="login" value="#{user.login}" /><br />
-    <h:outputLabel for="password" value="Password"/><h:inputSecret id="password" value="#{user.password}" /><br />
+    <h:outputLabel for="login" value="Login"/><h:inputText id="login" value="#{user.login}">
+    <f:validateLength minimum="3" maximum="5" />
+</h:inputText><h:message for="login" /><br />
+    <h:outputLabel for="password" value="Password"/><h:inputSecret id="password" value="#{user.password}" /><h:message for="password" /><br />
     <h:commandButton value="Go" />
 </h:form>
 </html>
